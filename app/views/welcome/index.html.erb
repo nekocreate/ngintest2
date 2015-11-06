@@ -1,0 +1,19 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<p>投稿フォーム</p>
+
+<%= form_for(Comment.new) do |f| %>
+    コメント：
+    <%= f.text_field :body %>
+    <%= f.submit %>
+<% end %>
+
+
+
+<% @comments.each do |t| %>
+    <%= t.created_at %>：
+    <%= t.body %>
+    <hr />
+<% end %>
+
